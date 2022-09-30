@@ -1,35 +1,33 @@
 package baseball.player;
 
-import baseball.context.NumbersValidator;
+import baseball.context.Numbers;
 import baseball.context.Printer;
 import baseball.printer.ConsolePrinter;
+import baseball.util.NumbersValidator;
 import camp.nextstep.edu.missionutils.Console;
 
 public class Player {
 
     private final Printer printer;
-    private final NumbersValidator validator;
 
-    public Player(Printer printer, NumbersValidator validator) {
+    public Player(Printer printer) {
         this.printer = printer;
-        this.validator = validator;
     }
 
-    public char[] present() {
-        char[] numbers = printAndGetNumbers();
-        validator.validateNumbers(numbers);
-        return numbers;
+    public Numbers present() {
+        return printAndGetNumbers();
     }
 
-    private char[] printAndGetNumbers() {
+    private Numbers printAndGetNumbers() {
         printer.print("숫자를 입력해주세요 : ");
-        return Console.readLine().toCharArray();
+        char[] rawNumbers = Console.readLine().toCharArray();
+        NumbersValidator.validate(rawNumbers);
+        return Numbers.valueOf(rawNumbers);
     }
 
     public static Player create() {
         return new Player(
-            new ConsolePrinter(),
-            new PlayerNumbersValidator()
+            new ConsolePrinter()
         );
     }
 }

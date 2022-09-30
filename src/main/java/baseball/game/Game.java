@@ -2,6 +2,7 @@ package baseball.game;
 
 import baseball.computer.Computer;
 import baseball.context.GameCycle;
+import baseball.context.Numbers;
 import baseball.context.RestartPolicy;
 import baseball.player.Player;
 
@@ -21,7 +22,7 @@ public class Game implements GameCycle {
 
     @Override
     public void onPlay() {
-        char[] numbers = player.present();
+        Numbers numbers = player.present();
         computer.match(numbers);
         computer.printResult();
     }

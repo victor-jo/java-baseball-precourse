@@ -2,6 +2,9 @@ package baseball.computer;
 
 import baseball.context.Printer;
 
+import static baseball.computer.ResultType.BALL;
+import static baseball.computer.ResultType.STRIKE;
+
 public class Result {
 
     private int ball = 0;
@@ -12,11 +15,11 @@ public class Result {
         this.strike = strike;
     }
 
-    public void addBall() {
+    private void addBall() {
         this.ball += 1;
     }
 
-    public void addStrike() {
+    private void addStrike() {
         this.strike += 1;
     }
 
@@ -51,5 +54,14 @@ public class Result {
 
     public boolean isPerfect() {
         return this.strike == 3;
+    }
+
+    public void add(ResultType resultType) {
+        if (resultType == STRIKE) {
+            addStrike();
+        }
+        if (resultType == BALL) {
+            addBall();
+        }
     }
 }

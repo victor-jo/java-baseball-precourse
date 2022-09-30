@@ -1,5 +1,6 @@
 package baseball.computer;
 
+import baseball.context.Numbers;
 import baseball.printer.ConsolePrinter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -16,10 +17,9 @@ class ComputerTest {
         Computer computer = new Computer(new ConsolePrinter());
         computer.generateNumber();
 
-        char[] numbers = (char[]) getPrivateVariable(computer, "numbers");
-        assertTrue(numbers[0] != numbers[1]);
-        assertTrue(numbers[1] != numbers[2]);
-        assertTrue(numbers[0] != numbers[2]);
+        Numbers numbers = (Numbers) getPrivateVariable(computer, "numbers");
+
+        assertTrue(numbers.good());
     }
 
     @Test
@@ -28,7 +28,7 @@ class ComputerTest {
         Computer computer = new Computer(new ConsolePrinter());
         computer.generateNumber();
 
-        char[] numbers = (char[]) getPrivateVariable(computer, "numbers");
+        Numbers numbers = (Numbers) getPrivateVariable(computer, "numbers");
         computer.match(numbers);
 
         Result result = (Result) getPrivateVariable(computer, "result");
@@ -41,7 +41,7 @@ class ComputerTest {
         Computer computer = new Computer(new ConsolePrinter());
         computer.generateNumber();
 
-        char[] numbers = (char[]) getPrivateVariable(computer, "numbers");
+        Numbers numbers = (Numbers) getPrivateVariable(computer, "numbers");
         computer.match(numbers);
 
         assertTrue(computer.lose());

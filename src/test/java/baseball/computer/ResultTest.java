@@ -3,6 +3,8 @@ package baseball.computer;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static baseball.computer.ResultType.BALL;
+import static baseball.computer.ResultType.STRIKE;
 import static baseball.util.TestUtil.getPrivateVariable;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,7 +14,7 @@ class ResultTest {
     @DisplayName("볼 하나가 추가되어야 한다.")
     void addBall() throws IllegalAccessException, NoSuchFieldException {
         Result result = new Result(0, 0);
-        result.addBall();
+        result.add(BALL);
         Object ball = getPrivateVariable(result, "ball");
         Object strike = getPrivateVariable(result, "strike");
         assertEquals(1, ball);
@@ -23,7 +25,7 @@ class ResultTest {
     @DisplayName("스트라이크 하나가 추가되어야 한다.")
     void addStrike() throws NoSuchFieldException, IllegalAccessException {
         Result result = new Result(0, 0);
-        result.addStrike();
+        result.add(STRIKE);
         Object ball = getPrivateVariable(result, "ball");
         Object strike = getPrivateVariable(result, "strike");
         assertEquals(1, strike);
