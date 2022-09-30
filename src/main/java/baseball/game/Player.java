@@ -3,7 +3,6 @@ package baseball.game;
 import baseball.context.Numbers;
 import baseball.io.Printer;
 import baseball.io.Scanner;
-import baseball.util.NumbersValidator;
 
 public class Player {
 

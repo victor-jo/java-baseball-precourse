@@ -1,6 +1,6 @@
 package baseball.player;
 
-import baseball.util.NumbersValidator;
+import baseball.game.NumbersValidator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ class NumbersValidatorTest {
 
     @Test
     @DisplayName("제시된 숫자는 1 ~ 9 사이의 숫자여야 한다.")
-    void 제시된_숫자_범위검사() {
+    void validateRange() {
         char[] numbers = {'0', '1', '2'};
         assertThatIllegalArgumentException()
             .isThrownBy(() -> NumbersValidator.validate(numbers))
@@ -19,7 +19,7 @@ class NumbersValidatorTest {
 
     @Test
     @DisplayName("서로 다른 숫자에 대해서만 입력이 가능하다.")
-    void 제시된_숫자_유니크검사() {
+    void validateUnique() {
         char[] numbers = {'1', '1', '2'};
         assertThatIllegalArgumentException()
             .isThrownBy(() -> NumbersValidator.validate(numbers))
@@ -28,7 +28,7 @@ class NumbersValidatorTest {
 
     @Test
     @DisplayName("제시하는 숫자는 3자리 수만 가능하다.")
-    void 제시된_숫자_길이검사() {
+    void validateLength() {
         char[] numbers = {'1', '2'};
         assertThatIllegalArgumentException()
             .isThrownBy(() -> NumbersValidator.validate(numbers))

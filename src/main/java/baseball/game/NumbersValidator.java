@@ -1,4 +1,4 @@
-package baseball.util;
+package baseball.game;
 
 public class NumbersValidator {
     public static void validate(char[] numbers) {
