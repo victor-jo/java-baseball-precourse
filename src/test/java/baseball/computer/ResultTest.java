@@ -34,7 +34,7 @@ class ResultTest {
     }
 
     @Test
-    @DisplayName("볼이 있다면 True, 없으면 False 를 리턴해야 한다.")
+    @DisplayName("볼이 있는지 없는지 검사되어야 한다.")
     void hasBall() {
         Result hasBallResult = new Result(2, 0);
         Result noneBallResult = new Result(0, 0);
@@ -43,7 +43,7 @@ class ResultTest {
     }
 
     @Test
-    @DisplayName("스트라이크가 있다면 True, 없으면 False 를 리턴해야 한다.")
+    @DisplayName("스트라이크가 있는지 없는지 검사되어야 한다.")
     void hasStrike() {
         Result hasStrikeResult = new Result(0, 2);
         Result noneStrikeResult = new Result(0, 0);
@@ -52,7 +52,7 @@ class ResultTest {
     }
 
     @Test
-    @DisplayName("볼, 스트라이크가 없다면 낫싱을 True 로 리턴해야 한다.")
+    @DisplayName("볼, 스트라이크가 없다면 낫싱 상태이어야 한다.")
     void nothing() {
         Result hasBallResult = new Result(2, 0);
         Result hasStrikeResult = new Result(0, 2);
@@ -63,7 +63,7 @@ class ResultTest {
     }
 
     @Test
-    @DisplayName("스트라이크가 3개이면 퍼펙트가 True 로 리턴해야 한다.")
+    @DisplayName("스트라이크가 3개이면 게임이 종료된다.")
     void isPerfect() {
         Result oneStrikeResult = new Result(0, 1);
         Result twoStrikeResult = new Result(0, 2);
