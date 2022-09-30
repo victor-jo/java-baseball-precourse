@@ -1,14 +1,14 @@
-package baseball.computer;
+package baseball.context;
 
-import baseball.context.Printer;
+import baseball.io.Printer;
 
-import static baseball.computer.ResultType.BALL;
-import static baseball.computer.ResultType.STRIKE;
+import static baseball.context.ResultType.BALL;
+import static baseball.context.ResultType.STRIKE;
 
 public class Result {
 
-    private int ball = 0;
-    private int strike = 0;
+    private int ball;
+    private int strike;
 
     public Result(int ball, int strike) {
         this.ball = ball;

@@ -1,8 +1,9 @@
-package baseball.computer;
+package baseball.game;
 
 import baseball.context.Numbers;
-import baseball.context.Printer;
-import baseball.printer.ConsolePrinter;
+import baseball.context.Result;
+import baseball.io.Printer;
+import baseball.io.ConsolePrinter;
 
 public class Computer {
 

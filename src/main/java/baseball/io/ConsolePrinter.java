@@ -1,6 +1,4 @@
-package baseball.printer;
-
-import baseball.context.Printer;
+package baseball.io;
 
 public class ConsolePrinter implements Printer {
     @Override

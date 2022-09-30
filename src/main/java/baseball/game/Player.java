@@ -1,8 +1,8 @@
-package baseball.player;
+package baseball.game;
 
 import baseball.context.Numbers;
-import baseball.context.Printer;
-import baseball.printer.ConsolePrinter;
+import baseball.io.Printer;
+import baseball.io.ConsolePrinter;
 import baseball.util.NumbersValidator;
 import camp.nextstep.edu.missionutils.Console;
 

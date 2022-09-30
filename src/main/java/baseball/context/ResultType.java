@@ -1,4 +1,4 @@
-package baseball.computer;
+package baseball.context;
 
 public enum ResultType {
     // 낫싱

@@ -1,10 +1,11 @@
 package baseball.computer;
 
+import baseball.context.Result;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static baseball.computer.ResultType.BALL;
-import static baseball.computer.ResultType.STRIKE;
+import static baseball.context.ResultType.BALL;
+import static baseball.context.ResultType.STRIKE;
 import static baseball.util.TestUtil.getPrivateVariable;
 import static org.junit.jupiter.api.Assertions.*;
 

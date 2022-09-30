@@ -1,4 +1,4 @@
-package baseball.computer;
+package baseball.context;
 
 public class ResultMessage {
     private String ball;

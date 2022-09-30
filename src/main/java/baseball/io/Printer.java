@@ -1,4 +1,4 @@
-package baseball.context;
+package baseball.io;
 
 public interface Printer {
     default void print(String message) {

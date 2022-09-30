@@ -1,9 +1,8 @@
 package baseball.context;
 
-import baseball.computer.ResultType;
 import camp.nextstep.edu.missionutils.Randoms;
 
-import static baseball.computer.ResultType.*;
+import static baseball.context.ResultType.*;
 
 public class Numbers {
 

@@ -1,8 +1,9 @@
 package baseball.computer;
 
 import baseball.context.Numbers;
-import baseball.printer.ConsolePrinter;
-import org.junit.jupiter.api.Assertions;
+import baseball.context.Result;
+import baseball.game.Computer;
+import baseball.io.ConsolePrinter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
