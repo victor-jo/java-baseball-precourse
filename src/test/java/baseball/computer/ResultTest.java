@@ -3,8 +3,7 @@ package baseball.computer;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Field;
-
+import static baseball.util.TestUtil.getPrivateVariable;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ResultTest {
@@ -69,11 +68,5 @@ class ResultTest {
         assertFalse(oneStrikeResult.isPerfect());
         assertFalse(twoStrikeResult.isPerfect());
         assertTrue(threeStrikeResult.isPerfect());
-    }
-
-    private Object getPrivateVariable(Object object, String variableName) throws NoSuchFieldException, IllegalAccessException {
-        Field field = object.getClass().getDeclaredField(variableName);
-        field.setAccessible(true);
-        return field.get(object);
     }
 }
