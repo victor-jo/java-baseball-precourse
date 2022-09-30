@@ -3,7 +3,6 @@ package baseball.game;
 import baseball.context.Numbers;
 import baseball.context.Result;
 import baseball.io.Printer;
-import baseball.io.ConsolePrinter;
 
 public class Computer {
 
@@ -36,11 +35,5 @@ public class Computer {
 
     public boolean lose() {
         return this.result.isPerfect();
-    }
-
-    public static Computer create() {
-        return new Computer(
-            new ConsolePrinter()
-        );
     }
 }

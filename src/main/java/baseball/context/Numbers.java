@@ -1,6 +1,6 @@
 package baseball.context;
 
-import camp.nextstep.edu.missionutils.Randoms;
+import baseball.util.RandomUtil;
 
 import static baseball.context.ResultType.*;
 
@@ -20,9 +20,9 @@ public class Numbers {
 
     public void random() {
         do {
-            this.number1 = Randoms.pickNumberInRange(1, 9);
-            this.number2 = Randoms.pickNumberInRange(1, 9);
-            this.number3 = Randoms.pickNumberInRange(1, 9);
+            this.number1 = RandomUtil.getNumber();
+            this.number2 = RandomUtil.getNumber();
+            this.number3 = RandomUtil.getNumber();
         }
         while (findSameNumberOnlyOne());
     }
