@@ -2,6 +2,7 @@ package baseball.player;
 
 import baseball.context.NumbersValidator;
 import baseball.context.Printer;
+import baseball.printer.ConsolePrinter;
 import camp.nextstep.edu.missionutils.Console;
 
 public class Player {
@@ -23,5 +24,12 @@ public class Player {
     private char[] printAndGetNumbers() {
         printer.print("숫자를 입력해주세요 : ");
         return Console.readLine().toCharArray();
+    }
+
+    public static Player create() {
+        return new Player(
+            new ConsolePrinter(),
+            new PlayerNumbersValidator()
+        );
     }
 }

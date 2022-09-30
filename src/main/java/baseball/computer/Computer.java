@@ -1,6 +1,7 @@
 package baseball.computer;
 
 import baseball.context.Printer;
+import baseball.printer.ConsolePrinter;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class Computer {
@@ -61,5 +62,11 @@ public class Computer {
 
     public boolean lose() {
         return this.result.isPerfect();
+    }
+
+    public static Computer create() {
+        return new Computer(
+            new ConsolePrinter()
+        );
     }
 }

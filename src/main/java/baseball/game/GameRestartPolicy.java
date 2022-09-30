@@ -2,6 +2,7 @@ package baseball.game;
 
 import baseball.context.Printer;
 import baseball.context.RestartPolicy;
+import baseball.printer.ConsolePrinter;
 import camp.nextstep.edu.missionutils.Console;
 
 public class GameRestartPolicy implements RestartPolicy {
@@ -27,5 +28,11 @@ public class GameRestartPolicy implements RestartPolicy {
         if (on) {
             signal.run();
         }
+    }
+
+    public static GameRestartPolicy create() {
+        return new GameRestartPolicy(
+            new ConsolePrinter()
+        );
     }
 }
