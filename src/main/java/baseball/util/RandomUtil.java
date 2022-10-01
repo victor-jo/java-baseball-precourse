@@ -5,6 +5,12 @@ import camp.nextstep.edu.missionutils.Randoms;
 public class RandomUtil {
 
     public static int getNumber() {
-        return Randoms.pickNumberInRange(1, 9);
+        int startInclusive = 1;
+        int endInclusive = 9;
+        return getNumber(startInclusive, endInclusive);
+    }
+
+    private static int getNumber(int startInclusive, int endInclusive) {
+        return Randoms.pickNumberInRange(startInclusive, endInclusive);
     }
 }
